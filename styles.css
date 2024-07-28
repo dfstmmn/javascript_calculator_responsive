@@ -1,0 +1,101 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Gotham Rounded', sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #3E5531;
+
+.calculator-container {
+  background-color: #597445;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(62, 85, 49, 0.3); 
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 350px;
+  gap: 10px; 
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.5rem; 
+  border: 1px solid #E7F0DC;
+  outline: none;
+  background-color: #658147;
+  color: #E7F0DC;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 10px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(62, 85, 49, 0.1); 
+}
+
+.calculator-grid > button:hover {
+  background-color: #597445;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #E7F0DC; 
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #597445; 
+  border-bottom: 2px solid #658147;
+  border-radius: 10px; 
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(62, 85, 49, 0.1); 
+}
+
+.output .previous-operand {
+  color: rgba(89, 116, 69, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: #597445;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .calculator-grid {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: minmax(60px, auto) repeat(5, 1fr); 
+  }
+
+  .calculator-grid > button {
+    font-size: 1.2rem; 
+    padding: 10px; 
+  }
+
+  .output {
+    padding: 10px;
+  }
+
+  .output .current-operand {
+    font-size: 2rem; 
+  }
+}
+}
